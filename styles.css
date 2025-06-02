@@ -1,0 +1,284 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    margin: 20px 0;
+    font-size: 3.5em;
+    color: #4ecca3;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+.opciones {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 40px;
+    flex-wrap: wrap;
+}
+
+.opciones button {
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    border-radius: 50%;
+    padding: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.opciones button:hover {
+    transform: translateY(-10px) scale(1.1);
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 25px rgba(78, 204, 163, 0.3);
+}
+
+.opciones img {
+    width: 100px;
+    height: 100px;
+    transition: transform 0.3s ease;
+}
+
+.resultado {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    padding: 30px;
+    margin-top: 40px;
+    width: 90%;
+    max-width: 600px;
+    font-size: 1.2em;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+
+.resultado-actual {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.elecciones {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 20px;
+}
+
+.eleccion {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+}
+
+.eleccion h3 {
+    margin: 0 0 10px 0;
+    color: #4ecca3;
+    font-size: 1.2em;
+}
+
+.eleccion-img {
+    width: 80px;
+    height: 80px;
+    margin: 10px 0;
+}
+
+.vs {
+    font-size: 2em;
+    font-weight: bold;
+    color: #4ecca3;
+    text-shadow: 0 0 15px rgba(78, 204, 163, 0.7);
+    padding: 0 10px;
+}
+
+.resultado-texto {
+    text-align: center;
+    font-size: 1.8em;
+    font-weight: bold;
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 20px;
+    transition: none;
+}
+
+.resultado-texto.ganas {
+    color: #4ecca3;
+    background: rgba(78, 204, 163, 0.1);
+}
+
+.resultado-texto.pierdes {
+    color: #ff6b6b;
+    background: rgba(255, 107, 107, 0.1);
+}
+
+.resultado-texto.empate {
+    color: #ffd93d;
+    background: rgba(255, 217, 61, 0.1);
+}
+
+.historial {
+    margin-top: 30px;
+}
+
+.historial h3 {
+    color: #4ecca3;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.historial-contenido {
+    max-height: 300px;
+    overflow-y: auto;
+    padding-right: 10px;
+}
+
+.historial-contenido::-webkit-scrollbar {
+    width: 8px;
+}
+
+.historial-contenido::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+}
+
+.historial-contenido::-webkit-scrollbar-thumb {
+    background: #4ecca3;
+    border-radius: 4px;
+}
+
+.historial-item {
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+    gap: 10px 20px;
+    padding: 10px;
+    margin-bottom: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    font-size: 0.9em;
+}
+
+.historial-item .numero {
+    color: #4ecca3;
+    font-weight: bold;
+    grid-column: 1;
+    grid-row: 1;
+    align-self: flex-start;
+}
+
+.historial-item .info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    grid-column: 1;
+    grid-row: 2;
+    width: 100%;
+    justify-content: flex-start;
+}
+
+.historial-item .jugador,
+.historial-item .pc {
+    flex-shrink: 0;
+}
+
+.historial-item .resultado {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    text-align: center;
+    font-weight: bold;
+    padding: 1px 1px;
+    border-radius: 5px;
+    min-width: auto;
+    justify-self: center;
+    align-self: center;
+    transition: none;
+}
+
+.historial-item .resultado.ganas {
+    color: #4ecca3;
+    background: rgba(78, 204, 163, 0.15);
+}
+
+.historial-item .resultado.pierdes {
+    color: #ff6b6b;
+    background: rgba(255, 107, 107, 0.15);
+}
+
+.historial-item .resultado.empate {
+    color: #ffd93d;
+    background: rgba(255, 217, 61, 0.15);
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5em;
+    }
+    
+    .opciones {
+        gap: 20px;
+    }
+    
+    .opciones img {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .resultado {
+        padding: 20px;
+        font-size: 1em;
+    }
+
+    .elecciones {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .vs {
+        display: block;
+        margin: 10px auto;
+    }
+
+    .historial-item {
+        grid-template-columns: auto auto;
+        font-size: 0.8em;
+        gap: 10px 15px;
+    }
+
+    .historial-item .info {
+        flex-direction: column;
+        gap: 5px;
+        grid-column: 1;
+        grid-row: 2;
+    }
+    
+    .historial-item .numero {
+        grid-column: 1;
+        grid-row: 1;
+        align-self: flex-start;
+    }
+    
+    .historial-item .resultado {
+        grid-column: 2;
+        grid-row: 1 / span 2;
+        align-self: center;
+        justify-self: center;
+    }
+}
+
+.initial-hidden {
+    display: none;
+}

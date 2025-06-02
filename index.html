@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piedra, Papel o Tijera</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>🎮 Piedra, Papel o Tijera</h1>
+    <div class="opciones">
+        <button onclick="jugar('piedra')" aria-label="Elegir Piedra">
+            <img src="imagenes/piedra-removebg-preview.png" alt="Piedra">
+        </button>
+        <button onclick="jugar('papel')" aria-label="Elegir Papel">
+            <img src="imagenes/papel-removebg-preview.png" alt="Papel">
+        </button>
+        <button onclick="jugar('tijera')" aria-label="Elegir Tijera">
+            <img src="imagenes/tijera-removebg-preview.png" alt="Tijera">
+        </button>
+    </div>
+    <div class="resultado" id="resultado">
+        <div class="resultado-actual initial-hidden">
+            <div class="elecciones">
+                <div class="eleccion jugador">
+                    <h3>Tu elección</h3>
+                    <img src="" alt="" class="eleccion-img">
+                    <p></p>
+                </div>
+                <div class="vs">VS</div>
+                <div class="eleccion computadora">
+                    <h3>PC</h3>
+                    <img src="" alt="" class="eleccion-img">
+                    <p></p>
+                </div>
+            </div>
+            <div class="resultado-texto"></div>
+        </div>
+        <div class="historial initial-hidden">
+            <h3>Historial de partidas</h3>
+            <div class="historial-contenido"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+
